@@ -37,12 +37,13 @@ def viznn(df):
 
  
     
-    #creating non-numeric column identifiers-------------------------------------------------------------------------
+    #creating non-numeric column identifiers----------------------------
     non_numeric_col_pos = np.empty(length, dtype=object)
     non_numeric_col_pos_counter = 0
-
-
-    #displays boxplot for all columns to identify outliers----------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+    #displays boxplot for all columns to identify outliers--------------
     #also performs segregation of numeric and non-numeric columns
     for i in range(0, length):
         box_label = "Label#{0}".format(i) #i = column of interest postion (first column starting from 0)
@@ -64,10 +65,11 @@ def viznn(df):
                 non_numeric_col_pos_counter = non_numeric_col_pos_counter + 1   
 
 
-    #BOXPLOTTING & NON NUMERIC COLUMN IDENTIFYING SUCCESS ~~ ARJUN----------------------------------------------------
-    
-    
-    #plots the correlation matrix for the data -----------------------------------------------------------------------
+    #BOXPLOTTING & NON NUMERIC COLUMN IDENTIFYING SUCCESS ~~ ARJUN------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------    
+    #plots the correlation matrix for the data -------------------------------------
     heatmap = np.empty((length - non_numeric_col_pos_counter), dtype=object)
     #separate numeric column labels for heatmap plot axes labeling
     j = np.arange(length)
@@ -82,6 +84,9 @@ def viznn(df):
     sns.set(rc = {'figure.figsize':(15,8)})
     ax = sns.heatmap(df.corr(), annot=True, xticklabels=list(heatmap), yticklabels=list(heatmap), annot_kws={"size": 35 / np.sqrt(len(df.corr()))})
     
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     #scatterplot with respect to target variable
     for i in range(0, length):
